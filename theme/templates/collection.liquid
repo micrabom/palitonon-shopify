@@ -1,0 +1,59 @@
+<h1 class="text-center">All {{ collection.title }}</h1>
+<div class="h-40 _flex _flex-direction-column _justify-between _w-xl _m-0-auto">
+    <div class="_w-xl _m-0-auto _px-1">
+        <select class="option-filter _rounded" id="sort-by">
+        {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+        {% for option in collection.sort_options %}
+        <option  value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+            {{ option.name }}
+        </option>
+        {% endfor %}
+        </select>
+    </div>
+    {% paginate collection.products by 8 %}
+    <div class="_w-xl  _m-0-auto  _grid _grid-cols-4 ">
+        {% for product in collection.products %}
+        <div class="_p-1 _flex _flex-direction-column _justify-start">
+            <div class="">
+                <a href="{{ product.url }}">
+                    <img src="{{ product.featured_image | image_url : width:100% }}" alt="{{ product.title }}"/>
+                    <h3> {{ product.title }} </h3>
+                    <p> {{ product.price | money }} </p>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="_w-960 _m-0-auto _flex _justify-center">
+        <div class="_mx-1 ">
+            <h4 class="_px-1">{{ paginate | default_pagination }}</h4>
+        </div>
+    </div>
+    {% endpaginate %}   
+</div>
+
+
+<script>
+  Shopify.queryParams = {};
+
+  // Preserve existing query parameters
+  if (location.search.length) {
+    var params = location.search.substr(1).split('&');
+
+    for (var i = 0; i < params.length; i++) {
+      var keyValue = params[i].split('=');
+
+      if (keyValue.length) {
+        Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+      }
+    }
+  }
+
+  // Update sort_by query parameter on select change
+  document.querySelector('#sort-by').addEventListener('change', function(e) {
+    var value = e.target.value;
+
+    Shopify.queryParams.sort_by = value;
+    location.search = new URLSearchParams(Shopify.queryParams).toString();
+  });
+</script>

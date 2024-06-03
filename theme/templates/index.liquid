@@ -1,0 +1,18 @@
+<div class="_w-xl _p _m-0-auto ">
+    <div>
+        <img src="{{ 'banner.png' | asset_url }}"/>
+    </div>
+    <div class="_w-xl  _m-0-auto  _grid _grid-cols-4 ">
+    {% for product in collections['frontpage'].products %}
+        <div class="_p-1 ">
+            <div>
+                <a href="{{ product.url }}">
+                    <img src="{{ product.featured_image | image_url : width:100% }}" alt="{{ product.title }}"/>
+                    <h3> {{ product.title }} </h3>
+                    <p> {{ product.price | money }} </p>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,180 @@
+*{
+    padding: 0;
+    margin: 0;
+    {% comment %} background: #222; {% endcomment %}
+}
+
+{% comment %} --- Custom Rambs CSS Template --- {% endcomment %}
+
+._h1{font-size: 2em;}
+._h2{font-size: 1.5em;}
+._h3{font-size: 1.25em;}
+._h4{font-size: 1em;}
+._h5{font-size: .7em;}
+._h6{font-size: .5em;}
+._p{font-size: 1em;}
+
+._grid{display: grid;}
+._grid-cols-1{grid-template-columns: repeat(1, minmax(0, 1fr));}
+._grid-cols-2{grid-template-columns: repeat(2, minmax(0, 1fr));}
+._grid-cols-3{grid-template-columns: repeat(3, minmax(0, 1fr));}
+._grid-cols-4{grid-template-columns: repeat(4, minmax(0, 1fr));}
+._grid-cols-5{grid-template-columns: repeat(5, minmax(0, 1fr));}
+._grid-cols-6{grid-template-columns: repeat(6, minmax(0, 1fr));}
+._grid-cols-7{grid-template-columns: repeat(7, minmax(0, 1fr));}
+._grid-cols-8{grid-template-columns: repeat(8, minmax(0, 1fr));}
+._grid-cols-9{grid-template-columns: repeat(9, minmax(0, 1fr));}
+._grid-cols-10{grid-template-columns: repeat(10, minmax(0, 1fr));}
+._grid-cols-11{grid-template-columns: repeat(11, minmax(0, 1fr));}
+._grid-cols-12{grid-template-columns: repeat(12, minmax(0, 1fr));}
+._col-span-1{grid-column: span 1 / span 1;}
+._col-span-2{grid-column: span 2 / span 2;}
+._col-span-3{grid-column: span 3 / span 3;}
+._col-span-4{grid-column: span 4 / span 4;}
+._col-span-5{grid-column: span 5 / span 5;}
+._col-span-6{grid-column: span 6 / span 6;}
+._col-span-7{grid-column: span 7 / span 7;}
+._col-span-8{grid-column: span 8 / span 8;}
+._col-span-9{grid-column: span 9 / span 9;}
+._col-span-10{grid-column: span 10 / span 10;}
+._col-span-11{grid-column: span 11 / span 11;}
+._col-span-12{grid-column: span 12 / span 12;}
+
+
+._flex{display: flex;}
+._justify-center{justify-content: center;}
+._justify-start{justify-content: flex-start;}
+._justify-end{justify-content: flex-end;}
+._justify-between{justify-content: space-between;}
+._items-start{align-items: flex-start;}
+._items-end{align-items: flex-end;}
+._items-center{align-items: center;}
+._items-baseline{align-items: flex-baseline;}
+._items-stretch{align-items: flex-stretch;}
+._flex-direction-row{flex-direction: row;}
+._flex-direction-column{flex-direction: column;}
+
+._m-1{margin: 1rem;}
+._ml-1{margin-left: 1rem;}
+._mr-1{margin-right: 1rem;}
+._mb-1{margin-bottom: 1rem;}
+._mt-1{margin-top: 1rem;}
+
+._p-1{padding: 1rem;}
+._p-half{padding: 0.5rem;}
+._px-1{padding: 0 1rem;}
+._px-half{padding: 0 0.5rem;}
+._py-half{padding: 0.5rem 0;}
+._pl-1{padding-left: 1rem;}
+._pr-1{padding-right: 1rem;}
+._pb-1{padding-bottom: 1rem;}
+._pt-1{padding-top: 1rem;}
+
+._w-auto{width: auto;}
+._w-full{width: 100%;}
+._outline-1{outline: 1px solid gray;}
+
+._whitespace-nowrap{white-space: nowrap;}
+
+._m-0-auto{margin: 0 auto;} 
+._w-960{width: 960px;}
+._min-w-960{width: 960px;}
+
+._min-w-sm{min-width: 640px;}
+._min-w-md{min-width: 768px;}
+._min-w-lg{min-width: 1024px;}
+._min-w-xl{min-width: 1280px;}
+._min-w-2xl{min-width: 1536px;}
+
+._w-sm{width: 640px;}
+._w-md{width: 768px;}
+._w-lg{width: 1024px;}
+._w-xl{width: 1280px;}
+._w-2xl{width: 1536px;}
+
+._h-sm{width: 16rem;}
+._h-md{width: 768px;}
+._h-lg{width: 1024px;}
+._h-xl{width: 1280px;}
+._h-2xl{width: 1536px;}
+
+
+._border-sm{border-radius: 0.125rem;}
+._rounded{border-radius: 0.25rem;}
+._border-md{border-radius: 0.375rem;}
+._border-lg{border-radius: 0.5rem;}
+{% comment %} --- endfor rambs css template --- {% endcomment %}
+{% comment %} --------------------------------- {% endcomment %}
+
+{% comment %} .banner-background{background-image: url("{{ 'banner.png' | asset_url }}")} {% endcomment %}
+.h-37{
+    height: 37rem;
+}
+.form-control {
+  padding: 8px; 
+  border: 1px solid #ccc; border-radius: 4px;
+}
+.text-color-green{ color: green;}
+.text-color-white{ color: white;}
+.text-center { text-align: center; }
+
+h1{font-size: 2em;}
+h2{font-size: 1.5em;}
+h3{font-size: 1.25em;}
+h4{font-size: 1em;}
+h5{font-size: .7em;}
+h6{font-size: .5em;}
+p{font-size: 1rem;}
+
+.text-white{color: white;}
+
+.r_flex_notalign{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.r-flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.m-gap-x{
+    margin: 0 1rem;
+}
+
+.m-gap-y{
+    margin: 1rem 0;
+}
+
+.main_container{
+    padding: 1rem;
+}
+
+.btn{
+    width: 7rem;
+    outline: 1px solid gray;
+    padding: .3rem;
+    border-radius: .3rem;
+}
+
+.min-w-500{
+    minWidth: 500px;
+}
+
+.w-7{
+    min-width: 7rem;
+}
+
+.w_full{
+    width: 100%;
+}
+.r_flex_end{
+    display:flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.option-filter{
+    padding: .3rem; 
+}

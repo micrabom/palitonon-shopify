@@ -1,0 +1,57 @@
+<div class="_grid _grid-cols-12 _p-1 _min-w-960 _m-0-auto">
+    <div class="_col-span-5">
+        <img src="{{ product.featured_image | image_url }}" alt="{{ product.title}}"/>
+    </div>
+   <div class="_col-span-7 _px-1 _flex _flex-direction-column _justify-between">
+        <div>
+            <h3> {{ product.title }} </h3>
+            <p> {{ product.price  | money }} </p>
+            <div>{{ product.description }}</div>
+        </div>
+        <div class="_grid _grid-cols-12 min-w-500">
+            {% form 'product', product %}
+            <div class="_flex _mb-1">
+                <p class="_whitespace-nowrap">Choose Variant: </p>
+                <select class="_ml-1 _px-half _rounded" name="id">
+                    <option disabled selected>Select</option>
+                    {% for variant in product.variants %}
+                    <option value={{ variant.id }}>
+                    {{ variant.title }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <button type="submit" class="btn plus">Add to Cart</button>
+            {% endform %}
+        </div>
+   </div>
+</div>
+
+
+<script>
+const plus = document.querySelector(".plus"),
+minus = document.querySelector(".minus"),
+num = document.querySelector(".num");
+let x = 1;
+
+plus.addEventListener("click", ()=> {
+    x++;
+    x = x < 10 ? "" + x : x;
+    num.innerText = x;
+    console.log(x)
+})
+
+minus.addEventListener("click", ()=> {
+    x--;
+    x = x > 0 ? "" + x : x;
+    num.innerText = x;
+    console.log(x)
+})
+
+num.addEventListener("click", (v)=> {
+    x=v;
+    console.log(x)
+})
+
+</script>

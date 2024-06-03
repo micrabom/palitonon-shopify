@@ -1,0 +1,13 @@
+
+<header class="_flex _justify-start _items-center _p-1">
+    <div class="_w-xl _m-0-auto _flex _justify-start _items-center">
+        <div>
+           <a href="/" > <h1 class="text-color-green">{{ shop.name }}</h1></a>
+        </div>
+        <div class="_flex _items-center">
+            {% for link in linklists.main-menu.links -%}
+            <div class="_ml-1">{{ link.title | link_to: link.url }}</div>
+            {%- endfor %}
+        </div>
+    </div>
+</header>
